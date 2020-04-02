@@ -1,4 +1,5 @@
 # CUSTOM
+.vscode/
 *.pdf
 *.jpg
 *.png
