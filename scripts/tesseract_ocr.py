@@ -15,8 +15,7 @@ def tesseract_ocr(image_name, preprocess="thresh"):
 
     # apply thresholding
     if preprocess == "thresh":
-        gray = cv2.threshold(gray, 0, 255,
-            cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+        gray = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
     # median blurring for noise removal
     elif preprocess == "blur":
         gray = cv2.medianBlur(gray, 3)
@@ -38,7 +37,6 @@ def tesseract_ocr(image_name, preprocess="thresh"):
     cv2.waitKey(0)
 
 if __name__ == "__main__":
-    # Parsing the command
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True,
                     help="path to input image to be OCR'd")

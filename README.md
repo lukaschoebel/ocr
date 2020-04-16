@@ -6,20 +6,29 @@ The objective of this repository is to understand common techniques for extracti
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Requirements](#requirements)
 - [Learnings](#learnings)
+- [Virtual Environment HowTo](#virtual-environment-howto)
+- [Requirements](#requirements)
 - [Acknowledgements](#acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Learnings
+
+In the beginning, the use of `tesseract` was evaluated but it was found out that the library only performs reasonably well when the data is not noisy and machine written.
+
+## Virtual Environment HowTo
+
+- Install [Conda](https://docs.conda.io/en/latest/miniconda.html)
+- Create Virtual environment with `conda create -n <ENV_NAME> python=3.6`
+- Activate venv with `conda activate <ENV_NAME>`
+- Install requirements with `pip install -r requirements.txt` and openCV with `conda install -c menpo opencv`
+- Removing venv by first deactivataing and then `conda env remove -n <ENV_NAME>`
 
 ## Requirements
 
 - `pytesseract` and [`tesseract`](https://github.com/tesseract-ocr/tesseract)
 - `openCV`
-
-## Learnings
-
-In the beginning, the use of `tesseract` was evaluated but it was found out that the library only performs reasonably well when the data is not noisy and machine written.
 
 ## Acknowledgements
 

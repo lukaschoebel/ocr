@@ -1,1 +1,3 @@
-Folder which contains all source files
+## Readme
+
+This folder contains all data that should be tested.
