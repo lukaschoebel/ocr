@@ -15,7 +15,7 @@ The objective of this repository is to understand common techniques for extracti
 
 ## Learnings
 
-In the beginning, the use of `tesseract` was evaluated but it was found out that the library only performs reasonably well when the data is not noisy and machine written.
+In the beginning, the use of `tesseract` was evaluated but it was found out that the library only performs reasonably well when the data is not too noisy and machine written. The script `tesseract_ocr.py` takes images in `.png` format, preprocesses them and prints the detected string to the console. In the current version, it is neither possible to detect special characters like *ü, ä* or *ß*, nor possible to execute the script on other image file formats.
 
 ## Virtual Environment HowTo
 

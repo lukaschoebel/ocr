@@ -4,11 +4,14 @@ import argparse
 import cv2
 import os
 
-def tesseract_ocr(image_name, preprocess="thresh"):
+def tesseract_ocr(image_name, preprocess, showFlag):
     """ Application of tesseract on image
     :param: string: image_name: Specifies name of the image
-    :param: string: preprocess: Specifies the preprocessing options [thresh, blur]
+    :param: string: preprocess: Specifies the preprocessing options [Default: thresh]
+    :param: Bool: showFlag: Specifies if the processed image should be shown. [Default: False]
     """
+
+    print(f"image_name: {image_name}")
     # load the example image and convert it to grayscale
     image = cv2.imread(image_name)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -31,19 +34,25 @@ def tesseract_ocr(image_name, preprocess="thresh"):
     os.remove(filename)
     print(text)
 
-    # show the output images
-    cv2.imshow("Image", image)
-    cv2.imshow("Output", gray)
-    cv2.waitKey(0)
+    # Shows the output images if desired
+    if showFlag:
+        cv2.imshow("Image", image)
+        cv2.imshow("Output", gray)
+        cv2.waitKey(0)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True,
-                    help="path to input image to be OCR'd")
+                    help="Specifies the path of a given input image")
     ap.add_argument("-p", "--preprocess", type=str, default="thresh",
                     help="Specifies the type of preprocessing that is conducted. Default is Threshholding.")
+    ap.add_argument("-s", "--show", type=bool, default=False,
+                    help="Specifies if the processed image should be shown or not. Default is False")
     args = vars(ap.parse_args())
 
-    tesseract_ocr(args["image"], args["preprocess"])
+    if (args["image"][-3:] == "png"): 
+        tesseract_ocr(args["image"], args["preprocess"], args["show"])
+    else: 
+        print("Please only enter images in .png format.")
 
     
