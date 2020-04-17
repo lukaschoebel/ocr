@@ -5,6 +5,7 @@
 *.png
 *.tiff
 !src/test*.pdf
+!src/test*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
