@@ -27,7 +27,7 @@ In the beginning, the use of `tesseract` was evaluated but it was found out that
 
 ## Requirements
 
-- `pytesseract` and [`tesseract`](https://github.com/tesseract-ocr/tesseract)
+- [`tesseract`](https://github.com/tesseract-ocr/tesseract)
 - `openCV`
 
 ## Acknowledgements
