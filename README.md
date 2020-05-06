@@ -33,3 +33,4 @@ In the beginning, the use of `tesseract` was evaluated but it was found out that
 ## Acknowledgements
 
 - Kudos to Adrian Rosebrocks and his [OCR Tutorial](https://www.pyimagesearch.com/2017/07/10/using-tesseract-ocr-python/)
+- [Handwriting-OCR](https://github.com/Breta01/handwriting-ocr)
